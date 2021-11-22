@@ -35,7 +35,7 @@ export const guid = () => {
 
 export const isValidURL = string => {
   var res = string.match(
-    /(http(s)?:\/\/.)([a-zA-Z0-9]{1,63}\.)?[-a-zA-Z0-9@:%._\+~#=]{1,63}(\.[a-z]{1,63})?\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)/g
+    /((http(s)?|ftp(s)?|file|chrome|extension):\/\/.)([a-z0-9]{1,63}\.)?[-a-z0-9@:%._\+~#=]{1,63}(\.[a-z]{1,63})?\b([-a-z0-9@:%_\+.~#?&//=]*)/gi
   );
   if (res == null) return false;
   else return true;
