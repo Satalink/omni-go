@@ -41,7 +41,7 @@ function onInit() {
         }
 
         if (!isValidURL(url)) {
-          alert("Please enter complete URL including http");
+          alert("Please enter a supported URL:\n [http(s)|ftp(s)|file|chrome|extension]://optional.required.optional/");
           return;
         }
 
