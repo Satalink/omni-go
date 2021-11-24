@@ -15,92 +15,92 @@ export const defaultShortcuts = [
   {
     keyword: "fb",
     url: "https://facebook.com",
-    group: "default"
+    group: "Default"
   },
   {
     keyword: "twit",
     url: "https://twitter.com",
-    group: "default"
+    group: "Default"
   },
   {
     keyword: "ttok",
     url: "https://tictok.com",
-    group: "default"
+    group: "Default"
   },
   {
     keyword: "yt",
     url: "https://youtube.com",
-    group: "default"
+    group: "Default"
   },
   {
     keyword: "ama",
     url: "https://amazon.com",
-    group: "default"
+    group: "Default"
   },
   {
     keyword: "gplay",
     url: "https://play.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gmail",
     url: "https://gmail.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gcal",
     url: "https://calendar.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gduo",
     url: "https://duo.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gmeet",
     url: "https://meet.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gchat",
     url: "https://chat.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gvoice",
     url: "https://voice.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gdocs",
     url: "https://docs.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gkeep",
     url: "https://keep.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gmaps",
     url: "https://maps.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gdrive",
     url: "https://drive.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gearth",
     url: "https://earth.google.com/",
-    group: "google"
+    group: "Google"
   },
   {
     keyword: "gpod",
     url: "https://podcasts.google.com/",
-    group: "google"
+    group: "Google"
   },
 ];
 
