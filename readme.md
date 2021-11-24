@@ -1,17 +1,32 @@
-## Keyword Redirect Chrome Extension
-
+# Omni Go Chrome Extension
+@REDUX of keyword-redirect
 **Chrome extension [link ](https://chrome.google.com/webstore/detail/keyword-redirect/okmndadncjgigahlgcbgenaoecagebhh)**
 
-### What are the use cases?
+##URL Validations
+supports redirects of http(s), ftp(s), file, chrome, extension
+supports expanded top level / subdomains (optional)
+supports domains up to 63 characters in length (required)  *localhost support*
+supports expanded domain extensions up to 63 characters in length
 
-- Add shortcut to favourite youtube playlists/channels you listen to daily
-- Add shortcuts to your favourite author page from blogs/news sites
-- Add shortcuts to that subreddit/facebook group/twitter profile you visit often
-- Add shortcuts to all the slack groups you are part of
-- Add shortcut to project documentation you're working on
+##Added Shortcut Functions:
+revamped create shortcut
+*new edit shortcut
+revamped delete shortcut
+*new go to shortcut
 
-...etc
+##Added Group Functions:
+revamped Group modal
+revamped create group function
+*new delete group
+
+##RETHEMED Configuration Page
+*new look and feel
+*new colors
+*new styling
+*new icons
+
+##Optimized
+removed uneccessary and overly complex rabit holes and duplication code
 
 ### Source code
-
 Developed using vue.js with single component, should be easy to understand.
