@@ -1,3 +1,58 @@
+h1.title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.125;
+  font-family: auto;
+}
 .modal-card-foot {
   justify-content: flex-end;
+}
+img.c-p {
+  margin-right: 8px;
+}
+.footer-icon-offset {
+  position: relative;
+  left: -380px;
+}
+.footer-content-offset {
+  margin-top: -90px;
+}
+.float-left {
+  float: left;
+}
+.ml4 {
+  margin-left: 4px;
+}
+.ml8 {
+  margin-left: 8px;
+}
+.ml12 {
+  margin-left: 12px;
+}
+.mr4 {
+  margin-right: 4px;
+}
+.mr8 {
+  margin-right: 8px;
+}
+.mr12 {
+  margin-right: 12px;
+}
+.mt4 {
+  margin-top: 4px;
+}
+.mt8 {
+  margin-top: 8px;
+}
+.mt12 {
+  margin-top: 12px;
+}
+.mb4 {
+  margin-bottom: 4px;
+}
+.mb8 {
+  margin-bottom: 8px;
+}
+.mb12 {
+  margin-bottom: 12px;
 }

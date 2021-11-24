@@ -296,7 +296,7 @@ th {
 }
 
 html {
-  background-color: white;
+background: linear-gradient(90deg, rgba(29,29,29,1) 0%, rgba(229,229,229,.83) 2%, rgba(229,229,229,.83) 98%, rgba(29,29,29,1) 100%);
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -911,15 +911,15 @@ a.has-text-dark:hover, a.has-text-dark:focus {
 }
 
 .has-text-primary {
-  color: #00d1b2 !important;
+  color: #333 !important;
 }
 
 a.has-text-primary:hover, a.has-text-primary:focus {
-  color: #009e86 !important;
+  color: #222 !important;
 }
 
 .has-background-primary {
-  background-color: #00d1b2 !important;
+  background-color: #333 !important;
 }
 
 .has-text-link {
@@ -947,7 +947,7 @@ a.has-text-info:hover, a.has-text-info:focus {
 }
 
 .has-text-success {
-  color: #23d160 !important;
+  color: #ddd !important;
 }
 
 a.has-text-success:hover, a.has-text-success:focus {
@@ -1975,18 +1975,26 @@ a.box:active {
   border-color: whitesmoke;
   box-shadow: none;
   color: whitesmoke;
-}
+}   
 
 .button.is-primary {
-  background-color: #00d1b2;
-  border-color: transparent;
-  color: #fff;
+  color: #234;
+  box-shadow: 
+  inset 0 0 1px 0 rgba(92,92,92,.7),
+  inset 0 0 2px 0 rgba(64,64,64,0.8),
+  inset 0 0 4px 0 rgba(64,64,64,0.9),
+  inset 0 0 7px 0 rgb(64,64,64,1.0);
+  border-radius: 16px;
+  padding: 0 16px;
 }
 
 .button.is-primary:hover, .button.is-primary.is-hovered {
-  background-color: #00c4a7;
-  border-color: transparent;
-  color: #fff;
+  box-shadow: 
+  inset 0 0 1px 0 rgba(32,32,32,.5),
+  inset 0 0 2px 0 rgba(16,16,16,0.7),
+  inset 0 0 4px 0 rgba(8,8,8,0.9),
+  inset 0 0 16px 0 rgb(128,128,128);
+  color: #000;
 }
 
 .button.is-primary:focus, .button.is-primary.is-focused {
@@ -1995,17 +2003,22 @@ a.box:active {
 }
 
 .button.is-primary:focus:not(:active), .button.is-primary.is-focused:not(:active) {
-  box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+  box-shadow: 
+  inset 0 0 1px 0 rgba(32,32,32,.5),
+  inset 0 0 2px 0 rgba(16,16,16,0.7),
+  inset 0 0 4px 0 rgba(8,8,8,0.9),
+  inset 0 0 16px 0 rgb(128,128,128);
+  color: #333;
 }
 
 .button.is-primary:active, .button.is-primary.is-active {
-  background-color: #00b89c;
+  background-color: #333;
   border-color: transparent;
   color: #fff;
 }
 
 .button.is-primary[disabled] {
-  background-color: #00d1b2;
+  background-color: #222;
   border-color: transparent;
   box-shadow: none;
 }
@@ -2020,10 +2033,10 @@ a.box:active {
 }
 
 .button.is-primary.is-inverted[disabled] {
-  background-color: #fff;
+  background-color: #333;
   border-color: transparent;
   box-shadow: none;
-  color: #00d1b2;
+  color: #666
 }
 
 .button.is-primary.is-loading::after {
@@ -2032,36 +2045,36 @@ a.box:active {
 
 .button.is-primary.is-outlined {
   background-color: transparent;
-  border-color: #00d1b2;
-  color: #00d1b2;
+  border-color: #999;
+  color: #333;
 }
 
 .button.is-primary.is-outlined:hover, .button.is-primary.is-outlined:focus {
-  background-color: #00d1b2;
-  border-color: #00d1b2;
+  background-color: #333;
+  border-color: #999;
   color: #fff;
 }
 
 .button.is-primary.is-outlined.is-loading::after {
-  border-color: transparent transparent #00d1b2 #00d1b2 !important;
+  border-color: transparent transparent #333 #333 !important;
 }
 
 .button.is-primary.is-outlined[disabled] {
   background-color: transparent;
-  border-color: #00d1b2;
+  border-color: #999;
   box-shadow: none;
-  color: #00d1b2;
+  color: #333;
 }
 
 .button.is-primary.is-inverted.is-outlined {
   background-color: transparent;
-  border-color: #fff;
-  color: #fff;
+  border-color: #333;
+  color: #999;
 }
 
 .button.is-primary.is-inverted.is-outlined:hover, .button.is-primary.is-inverted.is-outlined:focus {
   background-color: #fff;
-  color: #00d1b2;
+  color: #333;
 }
 
 .button.is-primary.is-inverted.is-outlined[disabled] {
@@ -2260,7 +2273,7 @@ a.box:active {
 }
 
 .button.is-success {
-  background-color: #23d160;
+  background-color: #03b140;
   border-color: transparent;
   color: #fff;
 }
@@ -2901,32 +2914,37 @@ a.box:active {
 
 .input,
 .textarea {
-  background-color: white;
-  border-color: #dbdbdb;
-  color: #363636;
-  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  background: #fff;
+  border-color: #dcdcdc;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 1px 1px 2px rgba(11, 11, 11, 0.83);
   max-width: 100%;
   width: 100%;
 }
 
 .input::-moz-placeholder,
 .textarea::-moz-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(0, 0, 0, 0.33);
+  font-weight: 500;
 }
 
 .input::-webkit-input-placeholder,
 .textarea::-webkit-input-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(0,0,0, 0.29);
+  font-weight: 500;
 }
 
 .input:-moz-placeholder,
 .textarea:-moz-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(0,0,0, 0.33);
+  font-weight: 500;
 }
 
 .input:-ms-input-placeholder,
 .textarea:-ms-input-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(0,0,0, 0.33);
+  font-weight: 500;
 }
 
 .input:hover, .input.is-hovered,
@@ -3221,30 +3239,30 @@ a.box:active {
 }
 
 .select select {
-  background-color: white;
-  border-color: #dbdbdb;
-  color: #363636;
-  cursor: pointer;
-  display: block;
-  font-size: 1em;
+  background: #fff;
+  border-color: #dcdcdc;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 1px 1px 2px rgba(11, 11, 11, 0.83);
   max-width: 100%;
-  outline: none;
+  width: 100%;  
 }
 
 .select select::-moz-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(11,11,11, 0.3);
+
 }
 
 .select select::-webkit-input-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(11,11,11, 0.3);
 }
 
 .select select:-moz-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(11,11,11, 0.3);
 }
 
 .select select:-ms-input-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: rgba(11,11,11, 0.3);
 }
 
 .select select:hover, .select select.is-hovered {
@@ -6023,11 +6041,11 @@ a.list-item {
 .modal-card-head,
 .modal-card-foot {
   align-items: center;
-  background-color: whitesmoke;
+  background: linear-gradient(180deg, rgba(29,29,29,1) 0%, rgba(183,183,183,1) 11%, rgba(255,255,255,.80) 83%, rgba(29,29,29,1) 100%);
   display: flex;
   flex-shrink: 0;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 10px;
   position: relative;
 }
 
@@ -10286,4 +10304,3 @@ label.panel-block:hover {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
 }
-/*# sourceMappingURL=bulma.css.map */

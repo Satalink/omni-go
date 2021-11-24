@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Shortcuts</title>
+    <title>Keyword Redirect</title>
     <link rel="stylesheet" href="../../stylesheets/bulma.css">
     <link rel="stylesheet" href="../../stylesheets/override.css">
     <link rel="stylesheet" href="../../stylesheets/app.css">
@@ -21,11 +21,6 @@
           <div class="columns">
             <div class="column">
               <h1 class="title has-text-centered ">Keyword Redirect</h1>
-            </div>
-          </div>
-          <div class="columns">
-            <div class="column">
-              <button class="button is-primary is-pulled-right" v-on:click="openCreateGroupModal">Create Group</button>
             </div>
           </div>
           <div class="card">
@@ -51,12 +46,12 @@
                     </div>
                     <div class="field">
                       <p class="control">
-                        <input class="input" type="text" placeholder="Shortcut (e.g. 'yt')" id="keyword">
+                        <input class="input" type="text" placeholder="Shortcut (e.g. 'go')" id="keyword">
                       </p>
                     </div>
                     <div class="field is-grouped">
                       <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="URL (e.g. 'https://youtube.com')" id="url">
+                        <input class="input" type="text" placeholder="URL (e.g. 'https://google.com')" id="url">
                       </p>
                       <p class="control">
                         <button class="button is-primary" id="addShortcut" type="submit">
@@ -68,7 +63,6 @@
                 </form>
               </div>
             </div>
-
           </div>
 
           <div class="card mt-5">
@@ -81,23 +75,28 @@
               <table class="table is-striped is-hoverable is-fullwidth">
                 <thead>
                   <tr>
-                    <th>Group</th>
-                    <th>keyword</th>
-                    <th>URL</th>
-                    <th>Actions</th>
+                    <th align='left'>Group</th>
+                    <th align='left'>keyword</th>
+                    <th align='left'>URL</th>
+                    <th align='right'>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="keywords-info">
-                  <tr v-for="st in reverseShortcuts">
-                    <td>{{getGroupName(st)}}</td>
-                    <td>{{st.keyword}}</td>
-                    <td>{{st.url}}</td>
-                    <td>
-                      <img src="../../assets/icons/trash-alt-regular.svg" width="15" class="c-p" v-on:click="deleteShortcut" v-bind:data-keyword="st.keyword">
+                  <tr v-for="st in getShortcuts">
+                    <td align='left'>{{getGroupName(st)}}</td>
+                    <td align='left'>{{st.keyword}}</td>
+                    <td align='left'>{{st.url}}</td>
+                    <td align='right'>
+                      <img src="../../assets/icons/edit.svg" width="16" class="c-p" v-on:click="editShortcut" v-bind:data-keyword="st.keyword">
+                      <img src="../../assets/icons/trashcan.svg" width="16" class="c-p" v-on:click="deleteShortcut" v-bind:data-keyword="st.keyword">
+                      <img src="../../assets/extension-icons/icon16.png" width="16" class="c-p" v-on:click="goShortcut" v-bind:data-keyword="st.keyword">
                     </td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div class="card">
+              <button class="button is-primary is-pulled-left mt8" v-on:click="openCreateGroupModal">Manage Groups</button>
             </div>
           </div>
 
@@ -108,20 +107,27 @@
           </div>
           <div class="columns">
             <div class="column has-text-centered">
-              <strong>Developed by <a target="_blank" href="https://sasi.io/">Sasikanth Dronavalli</a>. Code is opensourced on <a target="_blank" href="https://github.com/sasikanth513/keyword-redirect">Github</a>. Buy me <a href="https://www.paypal.me/KDronavalli/5usd" target="_blank">Coffee.</a></strong>
+              <img src="../../assets/extension-icons/icon128.png" class="footer-icon-offset">
+              <div class="footer-content-offset"><strong>Developed by <a target="_blank" href="https://sasi.io/">Sasikanth Dronavalli</a>. Code is opensourced on <a target="_blank" href="https://github.com/sasikanth513/keyword-redirect">Github</a>. Buy me <a href="https://www.paypal.me/KDronavalli/5usd" target="_blank">Coffee.</a></strong></div>
             </div>
           </div>
         </div>
       </section>
 
+
+
+
+
       <div class="modal" id="modal-create-group">
           <div class="modal-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
-              <p class="modal-card-title">Add Group</p>
-              <!-- <button class="delete" aria-label="close"></button> -->
+              <p class="modal-card-title">Group Management</p>
             </header>
             <section class="modal-card-body">
+              <header class="modal-card-head">
+                <p class="card-header-title">Add Group</p>
+              </header>
               <form class="field is-horizontal" id="createGroupForm">
                 <div class="field-body">
                   <div class="field">
@@ -131,14 +137,42 @@
                   </div>
                   <div class="field">
                     <p class="control">
-                      <input class="input" type="text" placeholder="Prefix (optional)" id="prefix">
+                      <input class="input" type="text" placeholder="Prefix (required)" id="prefix">
                     </p>
                   </div>
                 </div>
+                <button class="button is-primary ml8" v-on:click="createGroup">Create</button>
               </form>
+              <div class="content">
+                <header class="modal-card-head">
+                  <p class="card-header-title">Existing Groups</p>
+                </header>
+                <table class="table is-striped is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Group</th>
+                      <th>Prefix</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="keywords-info">
+                    <tr v-for="grp in getGroups">
+                      <td v-bind:data-prefix="grp.prefix">{{grp.name}}</td>
+                      <td v-if="grp.prefix !== false">{{grp.prefix}}</td>
+                      <td v-else>---</td>
+                      <td>
+                        <img src="../../assets/icons/trashcan.svg" width="18" class="c-p" v-on:click="deleteGroup" v-bind:data-prefix="grp.prefix">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              
               <div class="field-body">
                 <small class="text-muted">
-                  <strong>Prefix:</strong> A prefix for all shortcuts in this group. For e.g., if you have lots of youtube playlists you want to create shortcuts for, instead of adding shortcuts like 'yp1', 'yp2' and 'yp3' with "Default" group. You can create group and add prefix as 'yp' so all the shortcuts created under the group(e.g., 1, 2 and 3) will become 'yp1', 'yp2' and 'yp3'.
+                  <strong>Prefix:</strong> <i>Group</i> prefixes are prepended to the shortcut keywords assigned to the group.</br>
+                  e.g. <span>Group: </span><code>Google</code> | Prefix: </span><code>g</code><br>
+                  <span>with shortcut group members keywords of oo1, oo2, oo3</span><br>
+                  <span>will become: </span><code>goo1</code>,<code>goo2</code>,<code>goo3</code>
                 </small>
               </div><br>
               <div class="field-body">
@@ -146,10 +180,16 @@
                   <strong>Name:</strong> Name of the group.
                 </small>
               </div>
+              <hr>
+              <div class="field-body">
+                </br>
+                <small class="text-muted has-text-dark">
+                  <strong class="has-background-warning">Warning:</strong> Deleting a <strong>Group</strong> will delete all keyword shortcuts assigned to that group.
+                </small>
+              </div>              
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-success" v-on:click="createGroup">Create</button>
-              <button class="button modal-hide" v-on:click="hideCreateGroup">Cancel</button>
+              <button class="button is-primary modal-hide" v-on:click="hideCreateGroup">Close</button>
             </footer>
           </div>
         </div>
