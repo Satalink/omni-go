@@ -1,7 +1,7 @@
 {
   "name": "Omni Go",
   "description": "Omni GO Redirects. Type 'go' and a keyword into the address bar to open url.",
-  "version": "0.61",
+  "version": "1.2021.11.25",
   "options_page": "src/options/options.html",
   "background": {
     "page": "src/background/background.html"
