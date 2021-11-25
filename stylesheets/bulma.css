@@ -6041,7 +6041,7 @@ a.list-item {
 .modal-card-head,
 .modal-card-foot {
   align-items: center;
-  background: linear-gradient(180deg, rgba(29,29,29,1) 0%, rgba(183,183,183,1) 11%, rgba(255,255,255,.80) 83%, rgba(29,29,29,1) 100%);
+  background: linear-gradient(180deg, rgba(29,29,29,1) 0%, rgba(183,183,183,1) 13%, rgba(255,255,255,.80) 100%);
   display: flex;
   flex-shrink: 0;
   justify-content: flex-start;

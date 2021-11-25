@@ -13,29 +13,39 @@ export const defaultGroups = [
 
 export const defaultShortcuts = [
   {
+    keyword: "config",
+    url: "chrome-extension://jgjamcjlppfehpdmeceloofaeiiojoge/src/options/options.html",
+    group: "Default"
+  },
+  {
     keyword: "fb",
-    url: "https://facebook.com",
+    url: "https://facebook.com/",
     group: "Default"
   },
   {
     keyword: "twit",
-    url: "https://twitter.com",
+    url: "https://twitter.com/",
     group: "Default"
   },
   {
-    keyword: "ttok",
-    url: "https://tictok.com",
+    keyword: "tik",
+    url: "https://tictok.com/",
     group: "Default"
   },
   {
     keyword: "yt",
-    url: "https://youtube.com",
+    url: "https://youtube.com/",
     group: "Default"
   },
   {
-    keyword: "ama",
-    url: "https://amazon.com",
+    keyword: "amz",
+    url: "https://amazon.com/",
     group: "Default"
+  },
+  {
+    keyword: "wc",
+    url: "https://weather.com/",
+    group: "News"
   },
   {
     keyword: "gplay",
@@ -50,36 +60,6 @@ export const defaultShortcuts = [
   {
     keyword: "gcal",
     url: "https://calendar.google.com/",
-    group: "Google"
-  },
-  {
-    keyword: "gduo",
-    url: "https://duo.google.com/",
-    group: "Google"
-  },
-  {
-    keyword: "gmeet",
-    url: "https://meet.google.com/",
-    group: "Google"
-  },
-  {
-    keyword: "gchat",
-    url: "https://chat.google.com/",
-    group: "Google"
-  },
-  {
-    keyword: "gvoice",
-    url: "https://voice.google.com/",
-    group: "Google"
-  },
-  {
-    keyword: "gdocs",
-    url: "https://docs.google.com/",
-    group: "Google"
-  },
-  {
-    keyword: "gkeep",
-    url: "https://keep.google.com/",
     group: "Google"
   },
   {
