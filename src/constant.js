@@ -14,7 +14,7 @@ export const defaultGroups = [
 export const defaultShortcuts = [
   {
     keyword: "config",
-    url: "chrome-extension://jgjamcjlppfehpdmeceloofaeiiojoge/src/options/options.html",
+    url: "chrome-extension://bblloooleipdhkaaahfdalafpjooecoc/src/options/options.html",
     group: "Default"
   },
   {
