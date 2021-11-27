@@ -8,7 +8,10 @@ h1.title {
   justify-content: flex-end;
 }
 img.c-p {
-  margin-right: 8px;
+  margin: 0px 4px;
+}
+td.last {
+  white-space: nowrap;
 }
 .footer-icon-offset {
   position: relative;

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Omni Go</title>
-    <link rel="stylesheet" href="../../stylesheets/bulma.css">
+    <link rel="stylesheet" href="../../stylesheets/omnigo.css">
     <link rel="stylesheet" href="../../stylesheets/override.css">
     <link rel="stylesheet" href="../../stylesheets/app.css">
     <script type="module" src="../constant.js"></script>
@@ -33,6 +33,7 @@
               <div class="add-new-keyword">
                 <form class="field is-horizontal" id="createShortcutForm" v-on:submit="createShortcut">
                   <div class="field-body">
+                    <input class="hidden" type="text" id="index">
                     <div class="field">
                       <div class="control">
                         <div class="select fw">
@@ -43,15 +44,20 @@
                           </select>
                         </div>
                       </div>
+                    </div>                    
+                    <div class="field">
+                      <p class="control">
+                        <input class="input" type="text" placeholder="Shortcut Name (e.g. 'Chrome')" id="keyname">
+                      </p>
                     </div>
                     <div class="field">
                       <p class="control">
-                        <input class="input" type="text" placeholder="Keyword (e.g. 'go')" id="keyword">
+                        <input class="input" type="text" placeholder="Shortcut Keyword (e.g. 'cr')" id="keyword">
                       </p>
                     </div>
                     <div class="field is-grouped">
                       <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="URL (e.g. 'https://google.com')" id="url">
+                        <input class="input" type="text" placeholder="URL (e.g. 'https://chrome.google.com/')" id="url">
                       </p>
                       <p class="control">
                         <button class="button is-primary" id="addShortcut" type="submit">
@@ -76,20 +82,23 @@
                 <thead>
                   <tr>
                     <th align='left'>Group</th>
+                    <th align='left'>Name</th>
                     <th align='left'>keyword</th>
                     <th align='left'>URL</th>
                     <th align='right'>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="keywords-info">
-                  <tr v-for="st in getShortcuts">
-                    <td align='left'>{{getGroupName(st)}}</td>
-                    <td align='left'>{{st.keyword}}</td>
-                    <td align='left'>{{st.url}}</td>
+                  <tr v-for="(shortcut, index) in getShortcuts" :key="shortcut.keyword">
+                    <td class="hidden" id="index">{{index}}</td>
+                    <td align='left'>{{getGroupName(shortcut)}}</td>
+                    <td align='left'>{{shortcut.keyname}}</td>
+                    <td align='left'>{{shortcut.keyword}}</td>
+                    <td align='left'>{{shortcut.url}}</td>
                     <td align='right'>
-                      <img src="../../assets/icons/edit.svg" width="16" class="c-p" v-on:click="editShortcut" v-bind:data-keyword="st.keyword">
-                      <img src="../../assets/icons/trashcan.svg" width="16" class="c-p" v-on:click="deleteShortcut" v-bind:data-keyword="st.keyword">
-                      <img src="../../assets/extension-icons/icon16.png" width="16" class="c-p" v-on:click="goShortcut" v-bind:data-keyword="st.keyword">
+                      <img src="../../assets/icons/edit.svg" width="16" class="c-p" v-on:click="editShortcut" v-bind:data-index="index">
+                      <img src="../../assets/icons/trashcan.svg" width="16" class="c-p" v-on:click="deleteShortcut" v-bind:data-index="index">
+                      <img src="../../assets/extension-icons/icon16.png" width="16" class="c-p" v-on:click="goShortcut" v-bind:data-index="index">
                     </td>
                   </tr>
                 </tbody>
@@ -139,7 +148,7 @@
                   </div>
                   <div class="field">
                     <p class="control">
-                      <input class="input" type="text" placeholder="Prefix (required)" id="prefix">
+                      <input class="input" type="text" placeholder="Prefix (optional)" id="prefix">
                     </p>
                   </div>
                 </div>

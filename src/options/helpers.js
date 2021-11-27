@@ -13,3 +13,11 @@ export const isValidURL = string => {
   if (res == null) return false;
   else return true;
 };
+
+export const sortShortcuts = (shortcuts) => {
+  return shortcuts.sort(
+    (a,b) => (a.group > b.group) ? 1 :
+             (a.group === b.group) ? 
+             ((a.keyname > b.keyname) ? 1 : -1) : -1
+  );
+};

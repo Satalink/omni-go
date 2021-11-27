@@ -19,7 +19,7 @@
             transform: rotate(359deg);
   }
 }
-
+.hide, .hidden {display: none;}
 .delete, .modal-close, .is-unselectable, .button, .file, .breadcrumb, .pagination-previous,
 .pagination-next,
 .pagination-link,
@@ -294,6 +294,7 @@ th {
   padding: 0;
   text-align: left;
 }
+
 
 html {
 background: linear-gradient(90deg, rgba(29,29,29,1) 0%, rgba(229,229,229,.83) 2%, rgba(229,229,229,.83) 98%, rgba(29,29,29,1) 100%);
