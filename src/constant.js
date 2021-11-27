@@ -1,4 +1,9 @@
 export const defaultGroups = [
+  { 
+    name: "Config",
+    id: "config",
+    prefix: false
+  },
   {
     name: "Default",
     id: "default",
@@ -18,94 +23,94 @@ export const defaultGroups = [
 
 export const defaultShortcuts = [
   {
-    name: "Omni Go Configuration",
-    keyword: "conf",
+    keyname: "Omni Go Configuration",
+    keyword: "omni",
     url: "chrome-extension://"+chrome.runtime.id+"/src/options/options.html",
-    group: "Default"
+    group: "Config"
   },
   {
-    name: "Facebook",
+    keyname: "Facebook",
     keyword: "fb",
     url: "https://facebook.com/",
     group: "Default"
   },
   {
-    name: "Twitter",
+    keyname: "Twitter",
     keyword: "twit",
     url: "https://twitter.com/",
     group: "Default"
   },
   {
-    name: "TikTok",
+    keyname: "TikTok",
     keyword: "tik",
     url: "https://tiktok.com/",
     group: "Default"
   },
   {
-    name: "YouTube",
+    keyname: "YouTube",
     keyword: "yt",
     url: "https://youtube.com/",
     group: "Default"
   },
   {
-    name: "Amazon",
+    keyname: "Amazon",
     keyword: "amz",
     url: "https://amazon.com/",
     group: "Default"
   },
   {
-    name: "Weather",
-    keyword: "wc",
-    url: "https://weather.com/",
-    group: "News"
-  },
-  {
-    name: "Google Play",
+    keyname: "Google Play",
     keyword: "gplay",
     url: "https://play.google.com/",
     group: "Google"
   },
   {
-    name: "Chrome Store",
+    keyname: "Chrome Store",
     keyword: "gstore",
     url: "https://chrome.google.com/webstore",
     group: "Google",
   },
   {
-    name: "Gmail",
+    keyname: "Gmail",
     keyword: "gmail",
     url: "https://gmail.com/",
     group: "Google"
   },
   {
-    name: "Google Calendar",
+    keyname: "Google Calendar",
     keyword: "gcal",
     url: "https://calendar.google.com/",
     group: "Google"
   },
   {
-    name: "Google Maps",
+    keyname: "Google Maps",
     keyword: "gmaps",
     url: "https://maps.google.com/",
     group: "Google"
   },
   {
-    name: "Google Drive",
+    keyname: "Google Drive",
     keyword: "gdrive",
     url: "https://drive.google.com/",
     group: "Google"
   },
   {
-    name: "Google Earth",
+    keyname: "Google Earth",
     keyword: "gearth",
     url: "https://earth.google.com/",
     group: "Google"
   },
   {
-    name: "Google Podcasts",
+    keyname: "Google Podcasts",
     keyword: "gpod",
     url: "https://podcasts.google.com/",
     group: "Google"
+  },
+  {
+    keyname: "Weather",
+    keyword: "wc",
+    url: "https://weather.com/",
+    group: "News"
   },
 ];
 
