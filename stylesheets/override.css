@@ -12,6 +12,7 @@ img.c-p {
 }
 td.last {
   white-space: nowrap;
+  width: 10%;
 }
 .footer-icon-offset {
   position: relative;
