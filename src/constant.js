@@ -12,7 +12,7 @@ export const defaultGroups = [
   {
     name: "Google",
     id: "google",
-    prefix: "g"
+    prefix: false
   },
   {
     name: "News",
@@ -24,7 +24,7 @@ export const defaultGroups = [
 export const defaultShortcuts = [
   {
     keyname: "Omni Go Configuration",
-    keyword: "omni",
+    keyword: "conf",
     url: "chrome-extension://"+chrome.runtime.id+"/src/options/options.html",
     group: "Config"
   },
@@ -60,13 +60,13 @@ export const defaultShortcuts = [
   },
   {
     keyname: "Google Play",
-    keyword: "gplay",
+    keyword: "play",
     url: "https://play.google.com/",
     group: "Google"
   },
   {
     keyname: "Chrome Store",
-    keyword: "gstore",
+    keyword: "store",
     url: "https://chrome.google.com/webstore",
     group: "Google",
   },
@@ -78,31 +78,31 @@ export const defaultShortcuts = [
   },
   {
     keyname: "Google Calendar",
-    keyword: "gcal",
+    keyword: "cal",
     url: "https://calendar.google.com/",
     group: "Google"
   },
   {
     keyname: "Google Maps",
-    keyword: "gmaps",
+    keyword: "maps",
     url: "https://maps.google.com/",
     group: "Google"
   },
   {
     keyname: "Google Drive",
-    keyword: "gdrive",
+    keyword: "drive",
     url: "https://drive.google.com/",
     group: "Google"
   },
   {
     keyname: "Google Earth",
-    keyword: "gearth",
+    keyword: "earth",
     url: "https://earth.google.com/",
     group: "Google"
   },
   {
     keyname: "Google Podcasts",
-    keyword: "gpod",
+    keyword: "pods",
     url: "https://podcasts.google.com/",
     group: "Google"
   },

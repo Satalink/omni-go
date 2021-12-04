@@ -1,4 +1,4 @@
-import { appendPrefixToKeyword, isValidURL, sortShortcuts } from "./helpers.js";
+import { appendPrefixToKeyword, isValidURL, sortGroups, sortShortcuts } from "./helpers.js";
 
 function onInit() {
   new Vue({
@@ -142,30 +142,30 @@ function onInit() {
           prefix,
           name: groupName,
         });
+        this.groups = sortGroups(this.groups);
         chrome.storage.sync.set({ groups: this.groups }, function() {});
         this.openCreateGroupModal();
       },
       deleteGroup(e) {
-        const prefix = e.target.getAttribute("data-prefix");
-        let index;        
-        if(!!prefix) {
-          index = this.groups.findIndex(obj => obj.prefix === prefix.trim());
+        let index = e.target.getAttribute("data-index");
+        if(index >= 0 && this.groups[index].name !== "Default") {
           var resp = confirm("Delete Group ("+this.groups[index].name+") and any associated keyword shortcuts?");
           if(!!resp) {
-            //remove all shortcuts in group
+            //remove all shortcuts in group in reverse order as to not conflict with demisnishing indexes
             for(let i=this.shortcuts.length - 1; i>=0; i--) {
-              console.log(this.shortcuts[i].group+" = "+this.groups[index].name);
               if (this.shortcuts[i].group === this.groups[index].name) {
                 this.shortcuts.splice(i, 1);
               }
             }
+            this.shortcuts = sortShortcuts(this.shortcuts);
             chrome.storage.sync.set({ shortcuts: this.shortcuts }, function() {});
             //now remove the group
             this.groups.splice(index, 1);
+            this.groups = sortGroups(this.groups);
             chrome.storage.sync.set({ groups: this.groups }, function() {});
           }
         } else {
-          alert("Default Group can not be deleted");
+          alert("Default group can not be deleted");
         }
         this.openCreateGroupModal();
       }

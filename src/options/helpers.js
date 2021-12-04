@@ -21,3 +21,9 @@ export const sortShortcuts = (shortcuts) => {
              ((a.keyname > b.keyname) ? 1 : -1) : -1
   );
 };
+
+export const sortGroups = (groups) => {
+  return groups.sort(
+     (a,b) => (a.name > b.name) ? 1 : -1
+  );
+};

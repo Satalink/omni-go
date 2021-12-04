@@ -70,7 +70,6 @@
               </div>
             </div>
           </div>
-
           <div class="card mt-5">
             <header class="card-header">
               <p class="card-header-title">
@@ -141,6 +140,7 @@
               </header>
               <form class="field is-horizontal" id="createGroupForm">
                 <div class="field-body">
+                  <input class="hidden" type="text" id="index">
                   <div class="field">
                     <p class="control">
                       <input class="input" type="text" placeholder="Name (required)" id="groupName">
@@ -167,12 +167,12 @@
                     </tr>
                   </thead>
                   <tbody id="keywords-info">
-                    <tr v-for="grp in getGroups">
-                      <td v-bind:data-prefix="grp.prefix">{{grp.name}}</td>
-                      <td v-if="grp.prefix !== false">{{grp.prefix}}</td>
+                    <tr v-for="(group, index) in getGroups" :key="group.name">
+                      <td v-bind:data-prefix="group.prefix">{{group.name}}</td>
+                      <td v-if="group.prefix !== false">{{group.prefix}}</td>
                       <td v-else>---</td>
                       <td>
-                        <img src="../../assets/icons/trashcan.svg" width="18" class="c-p" v-on:click="deleteGroup" v-bind:data-prefix="grp.prefix">
+                        <img src="../../assets/icons/trashcan.svg" width="18" class="c-p" v-on:click="deleteGroup" v-bind:data-index="index">
                       </td>
                     </tr>
                   </tbody>
