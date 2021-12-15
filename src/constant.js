@@ -28,7 +28,7 @@ export const defaultShortcuts = [
     keyword: "omni",
     url: "https://chrome.google.com/webstore/detail/omni-go/bblloooleipdhkaaahfdalafpjooecoc",
     group: "Default"
-  }
+  },
   {
     keyname: "Facebook",
     keyword: "fb",

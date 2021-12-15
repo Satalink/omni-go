@@ -4,7 +4,7 @@ function onInit() {
   new Vue({
     el: "#app",
     data: {
-      message: "Hello Vue!",
+      message: "Omni GO!",
       groups: [],
       shortcuts: []
     },
