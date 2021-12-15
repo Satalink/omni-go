@@ -168,6 +168,14 @@ function onInit() {
           alert("Default group can not be deleted");
         }
         this.openCreateGroupModal();
+      },
+      exportOptions() {
+        const exportShortcuts = JSON.stringify(this.shortcuts, null, 2);
+        const exportGroups = JSON.stringify(this.groups, null, 2);
+        
+      },
+      importOptions() {
+
       }
     }
   });

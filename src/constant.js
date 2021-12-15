@@ -1,9 +1,4 @@
 export const defaultGroups = [
-  { 
-    name: "Config",
-    id: "config",
-    prefix: false
-  },
   {
     name: "Default",
     id: "default",
@@ -26,8 +21,14 @@ export const defaultShortcuts = [
     keyname: "Omni Go Configuration",
     keyword: "conf",
     url: "chrome-extension://"+chrome.runtime.id+"/src/options/options.html",
-    group: "Config"
+    group: "Default"
   },
+  {
+    keyname: "Omni Go Chrome Store Page",
+    keyword: "omni",
+    url: "https://chrome.google.com/webstore/detail/omni-go/bblloooleipdhkaaahfdalafpjooecoc",
+    group: "Default"
+  }
   {
     keyname: "Facebook",
     keyword: "fb",
