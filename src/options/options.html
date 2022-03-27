@@ -38,7 +38,7 @@
                       <div class="control">
                         <div class="select fw">
                           <select id="groupList" class="fw">
-                            <option v-for="group in groups" v-bind:value="group.id">
+                            <option v-for="group in groups" v-bind:value="group.id" :selected= "group.name == 'Default'" >
                               {{group.name}}
                             </option>
                           </select>
