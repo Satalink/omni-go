@@ -1,0 +1,10 @@
+*.js      linguist-detect=true
+*.php     linguist-detect=false
+*.java    linguist-detect=false
+*.py      linguist-detect=false
+*.python  linguist-detect=false
+*.sh      linguist-detect=false
+*.css     linguist-detect=false
+*.html    linguist-detect=false
+*.xml     linguist-detect=false
+*.json    linguist-detect=false
