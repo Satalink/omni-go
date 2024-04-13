@@ -4,6 +4,13 @@ h1.title {
   line-height: 1.125;
   font-family: auto;
 }
+span.feedback {
+  font-size: 1.29rem;
+  font-weight: 700;
+  line-height: 1.00;
+  font-family: auto;
+  float: right;
+}
 .modal-card-foot {
   justify-content: flex-end;
 }
