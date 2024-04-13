@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Omni Go",
   "description": "Omni GO Redirects. Type 'go' and a keyword into the address bar to open url.",
-  "version": "1.2024.0413.0754",
+  "version": "1.2024.0413.0847",
   "options_page": "src/options/options.html",
   "background": {
     "page": "src/background/background.html"
