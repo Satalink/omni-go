@@ -88,9 +88,16 @@ function onInit() {
           }
           document.getElementById('index').value = index;
           document.getElementById('groupList').selectedIndex = gid;
+          document.getElementById('groupList').style.background = "#ff0";
           document.getElementById('keyname').value = keyname || ""; //backwards compatibility
+          document.getElementById('keyname').style.background = "#ff0";
           document.getElementById('keyword').value = rootword;
+          document.getElementById('keyword').style.background = "#ff0";
           document.getElementById('url').value = shortcut.url;
+          document.getElementById('url').style.background = "#ff0";
+          document.getElementById('addShortcut').innerText = "Update";
+          document.getElementById('addShortcut').style.background = "#4f4";
+          window.scroll(0,0);
         }
       },    
       deleteShortcut(e) {
