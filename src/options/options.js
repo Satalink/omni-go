@@ -1,7 +1,7 @@
 import { appendPrefixToKeyword, isValidURL, sortGroups, sortShortcuts } from "./helpers.js";
 
 function onInit() {
-  new Vue({
+  new Vue.createApp({
     el: "#app",
     data: {
       message: "Omni GO!",
