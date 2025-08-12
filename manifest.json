@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Omni Go",
   "description": "Omni GO Redirects. Type 'go' and a keyword into the address bar to open a preconfigured url.",
-  "version": "1.2024.0416.0816",
+  "version": "1.2025.0812.1600",
   "permissions": [
     "storage",
     "activeTab",
