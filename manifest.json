@@ -1,15 +1,27 @@
 {
   "manifest_version": 3,
   "name": "Omni Go",
-  "description": "Omni GO Redirects. Type 'go' and a keyword into the address bar to open url.",
+  "description": "Omni GO Redirects. Type 'go' and a keyword into the address bar to open a preconfigured url.",
   "version": "1.2024.0416.0816",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "webNavigation"
+  ],  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
   "options_page": "src/options/options.html",
   "background": {
     "service_worker": "src/background/background.js",
     "type": "module"
   },
   "minimum_chrome_version": "92",
-  "permissions": ["storage", "tabs"],
   "omnibox": { "keyword": "go" },
   "action": {
     "default_icon": {
