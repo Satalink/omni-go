@@ -5,9 +5,7 @@
   "version": "1.2025.0812.1600",
   "permissions": [
     "storage",
-    "activeTab",
-    "tabs",
-    "webNavigation"
+    "activeTab"
   ],  
   "content_scripts": [
     {
